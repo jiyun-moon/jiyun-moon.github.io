@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "vue dom이 변경 되지 안을 때"
+title:  "vue dom 화면이 변경 되지 않을 때"
 date:   2020-03-05 
-categories: vue js
+categories: vue.js
 ---
 컴포넌트를 필용에 따라 추가하고 삭제하는 기능을 만드는데,
 그 순서가 뒤엉킨다 해야하나?
