@@ -103,9 +103,9 @@ analytics:
 author:
   name             : "moonji"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+  bio              : "디자이너였던 프론트엔드 개발자. 웹을 탐험하고 있습니다."
+  location         : "Seoul"
+  email            : "jiyun0527@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
