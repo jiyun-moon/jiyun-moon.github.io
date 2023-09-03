@@ -1,0 +1,17 @@
+current directory: /Users/moonjiyun/STUDY_REACT/jiyun-moon.github.io/vendor/ruby/3.2.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+/Users/moonjiyun/.rubies/ruby-3.2.2/bin/ruby extconf.rb
+checking for -lstdc++... yes
+creating Makefile
+
+current directory: /Users/moonjiyun/STUDY_REACT/jiyun-moon.github.io/vendor/ruby/3.2.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= sitearchdir\=./.gem.20230903-11408-nxv2h2 sitelibdir\=./.gem.20230903-11408-nxv2h2 clean
+
+current directory: /Users/moonjiyun/STUDY_REACT/jiyun-moon.github.io/vendor/ruby/3.2.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= sitearchdir\=./.gem.20230903-11408-nxv2h2 sitelibdir\=./.gem.20230903-11408-nxv2h2
+compiling unf.cc
+linking shared-object unf_ext.bundle
+ld: can't link with a main executable file '/Users/moonjiyun/.rubies/ruby-3.2.2/bin/ruby' for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [unf_ext.bundle] Error 1
+
+make failed, exit code 2

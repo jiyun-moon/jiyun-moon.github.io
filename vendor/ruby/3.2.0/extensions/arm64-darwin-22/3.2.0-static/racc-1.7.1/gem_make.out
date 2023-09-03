@@ -1,0 +1,28 @@
+current directory: /Users/moonjiyun/STUDY_REACT/jiyun-moon.github.io/vendor/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse
+/Users/moonjiyun/.rubies/ruby-3.2.2/bin/ruby extconf.rb
+checking for rb_block_call()... no
+checking for rb_ary_subseq()... no
+creating Makefile
+
+current directory: /Users/moonjiyun/STUDY_REACT/jiyun-moon.github.io/vendor/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230903-11408-xaa6j5 sitelibdir\=./.gem.20230903-11408-xaa6j5 clean
+
+current directory: /Users/moonjiyun/STUDY_REACT/jiyun-moon.github.io/vendor/ruby/3.2.0/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230903-11408-xaa6j5 sitelibdir\=./.gem.20230903-11408-xaa6j5
+compiling cparse.c
+cparse.c:300:5: warning: 'rb_iterate' is deprecated: by: rb_block_call since 1.9 [-Wdeprecated-declarations]
+    rb_iterate(lexer_iter, v->value_v, lexer_i, v->value_v);
+    ^
+/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0/ruby/internal/iterator.h:269:1: note: 'rb_iterate' has been explicitly marked deprecated here
+RBIMPL_ATTR_DEPRECATED(("by: rb_block_call since 1.9"))
+^
+/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0/ruby/internal/attr/deprecated.h:36:53: note: expanded from macro 'RBIMPL_ATTR_DEPRECATED'
+# define RBIMPL_ATTR_DEPRECATED(msg) __attribute__((__deprecated__ msg))
+                                                    ^
+1 warning generated.
+linking shared-object racc/cparse.bundle
+ld: can't link with a main executable file '/Users/moonjiyun/.rubies/ruby-3.2.2/bin/ruby' for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [cparse.bundle] Error 1
+
+make failed, exit code 2

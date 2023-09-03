@@ -1,0 +1,138 @@
+have_func: checking for rb_block_call()... -------------------- no
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/moonjiyun/.rubies/ruby-3.2.2/lib "clang -o conftest -I/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0/arm64-darwin22 -I/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0 -I. -I/opt/homebrew/opt/openssl@1.1/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/gdbm/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -pipe conftest.c  -L. -L/Users/moonjiyun/.rubies/ruby-3.2.2/lib -L/opt/homebrew/opt/openssl@1.1/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/gdbm/lib -L. -fstack-protector-strong -L/opt/homebrew/opt/openssl@1.1/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/gdbm/lib     -lruby.3.2-static -framework CoreFoundation -ldl -lobjc -lpthread   -lpthread  "
+ld: warning: ignoring file /Users/moonjiyun/.rubies/ruby-3.2.2/lib/libruby.3.2-static.a, building for macOS-x86_64 but attempting to link with file built for macOS-arm64
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return !!argv[argc];
+6: }
+/* end */
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/moonjiyun/.rubies/ruby-3.2.2/lib "clang -o conftest -I/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0/arm64-darwin22 -I/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0 -I. -I/opt/homebrew/opt/openssl@1.1/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/gdbm/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -pipe conftest.c  -L. -L/Users/moonjiyun/.rubies/ruby-3.2.2/lib -L/opt/homebrew/opt/openssl@1.1/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/gdbm/lib -L. -fstack-protector-strong -L/opt/homebrew/opt/openssl@1.1/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/gdbm/lib     -lruby.3.2-static -framework CoreFoundation -ldl -lobjc -lpthread   -lpthread  "
+ld: warning: ignoring file /Users/moonjiyun/.rubies/ruby-3.2.2/lib/libruby.3.2-static.a, building for macOS-x86_64 but attempting to link with file built for macOS-arm64
+Undefined symbols for architecture x86_64:
+  "_rb_block_call", referenced from:
+      _t in conftest-9ae44e.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_block_call; return !p; }
+/* end */
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/moonjiyun/.rubies/ruby-3.2.2/lib "clang -o conftest -I/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0/arm64-darwin22 -I/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0 -I. -I/opt/homebrew/opt/openssl@1.1/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/gdbm/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -pipe conftest.c  -L. -L/Users/moonjiyun/.rubies/ruby-3.2.2/lib -L/opt/homebrew/opt/openssl@1.1/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/gdbm/lib -L. -fstack-protector-strong -L/opt/homebrew/opt/openssl@1.1/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/gdbm/lib     -lruby.3.2-static -framework CoreFoundation -ldl -lobjc -lpthread   -lpthread  "
+conftest.c:14:13: warning: a function declaration without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+extern void rb_block_call();
+            ^
+conftest.c:14:13: error: conflicting types for 'rb_block_call'
+/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0/ruby/internal/iterator.h:324:7: note: previous declaration is here
+VALUE rb_block_call(VALUE obj, ID mid, int argc, const VALUE *argv, rb_block_call_func_t proc, VALUE data2);
+      ^
+conftest.c:15:29: error: too few arguments to function call, expected 6, have 0
+int t(void) { rb_block_call(); return 0; }
+              ~~~~~~~~~~~~~ ^
+/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0/ruby/internal/iterator.h:324:7: note: 'rb_block_call' declared here
+VALUE rb_block_call(VALUE obj, ID mid, int argc, const VALUE *argv, rb_block_call_func_t proc, VALUE data2);
+      ^
+1 warning and 2 errors generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void rb_block_call();
+15: int t(void) { rb_block_call(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_ary_subseq()... -------------------- no
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/moonjiyun/.rubies/ruby-3.2.2/lib "clang -o conftest -I/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0/arm64-darwin22 -I/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0 -I. -I/opt/homebrew/opt/openssl@1.1/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/gdbm/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -pipe conftest.c  -L. -L/Users/moonjiyun/.rubies/ruby-3.2.2/lib -L/opt/homebrew/opt/openssl@1.1/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/gdbm/lib -L. -fstack-protector-strong -L/opt/homebrew/opt/openssl@1.1/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/gdbm/lib     -lruby.3.2-static -framework CoreFoundation -ldl -lobjc -lpthread   -lpthread  "
+ld: warning: ignoring file /Users/moonjiyun/.rubies/ruby-3.2.2/lib/libruby.3.2-static.a, building for macOS-x86_64 but attempting to link with file built for macOS-arm64
+Undefined symbols for architecture x86_64:
+  "_rb_ary_subseq", referenced from:
+      _t in conftest-622911.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_ary_subseq; return !p; }
+/* end */
+
+DYLD_FALLBACK_LIBRARY_PATH=.:/Users/moonjiyun/.rubies/ruby-3.2.2/lib "clang -o conftest -I/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0/arm64-darwin22 -I/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0/ruby/backward -I/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0 -I. -I/opt/homebrew/opt/openssl@1.1/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/gdbm/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wundef  -pipe conftest.c  -L. -L/Users/moonjiyun/.rubies/ruby-3.2.2/lib -L/opt/homebrew/opt/openssl@1.1/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/gdbm/lib -L. -fstack-protector-strong -L/opt/homebrew/opt/openssl@1.1/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/gdbm/lib     -lruby.3.2-static -framework CoreFoundation -ldl -lobjc -lpthread   -lpthread  "
+conftest.c:14:13: warning: a function declaration without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+extern void rb_ary_subseq();
+            ^
+conftest.c:14:13: error: conflicting types for 'rb_ary_subseq'
+/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0/ruby/internal/intern/array.h:208:7: note: previous declaration is here
+VALUE rb_ary_subseq(VALUE ary, long beg, long len);
+      ^
+conftest.c:15:29: error: too few arguments to function call, expected 3, have 0
+int t(void) { rb_ary_subseq(); return 0; }
+              ~~~~~~~~~~~~~ ^
+/Users/moonjiyun/.rubies/ruby-3.2.2/include/ruby-3.2.0/ruby/internal/intern/array.h:208:7: note: 'rb_ary_subseq' declared here
+VALUE rb_ary_subseq(VALUE ary, long beg, long len);
+      ^
+1 warning and 2 errors generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: extern void rb_ary_subseq();
+15: int t(void) { rb_ary_subseq(); return 0; }
+/* end */
+
+--------------------
+

@@ -1,0 +1,21 @@
+current directory: /Users/moonjiyun/STUDY_REACT/jiyun-moon.github.io/vendor/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+/Users/moonjiyun/.rubies/ruby-3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/moonjiyun/STUDY_REACT/jiyun-moon.github.io/vendor/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20230903-17615-zb6ouj sitelibdir\=./.gem.20230903-17615-zb6ouj clean
+
+current directory: /Users/moonjiyun/STUDY_REACT/jiyun-moon.github.io/vendor/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20230903-17615-zb6ouj sitelibdir\=./.gem.20230903-17615-zb6ouj
+compiling ruby_http_parser.c
+ruby_http_parser.c:365:17: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'long' [-Wsign-compare]
+    if (nparsed < len)
+        ~~~~~~~ ^ ~~~
+1 warning generated.
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.bundle
+ld: can't link with a main executable file '/Users/moonjiyun/.rubies/ruby-3.2.2/bin/ruby' for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [ruby_http_parser.bundle] Error 1
+
+make failed, exit code 2
